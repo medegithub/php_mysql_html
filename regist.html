@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<link rel="icon" href="img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/regist.css">
+	<!-- [if lt IE 9]>
+		<script scr="js/html5shiv.min.js"></script>
+		<script src="js/respond.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header id="header">
+		<div class="logo clearfix">
+			<img src="img/logo.png" alt="京东"><span>欢迎注册</span>
+		</div>
+	</header><!-- /header -->
+	<main id="main">
+		<video autoplay loop>
+			<source src="video/bg.mp4">
+			浏览器不支持video标签，请使用新版本浏览器！
+		</video>
+		<div class="form-box" id="inpBox">
+			<form action="practice.php" method="post">
+				<div class="uesrname clearfix">
+					<label for="uesrname">用户名</label>
+					<input type="text" name="uname" value="" placeholder="请输入用户名" required autocomplete autofocus pattern="^[0-9]*$">
+					<label id="usernameTip">请输入8到16位的英文字母或数字</label>
+				</div>
+				<div class="password clearfix">
+					<label for="password">密码</label>
+					<input type="text" name="upsw" value="" placeholder="请输入密码" required pattern="^[0-9]*$">
+					<label id="passwordTip">请输入8到12位的数字</label>
+				</div>
+				<div class="website clearfix">
+					<label for="website">个人主页</label>
+					<input type="text" name="uweb" value="" id="website" placeholder="请输入个人主页" autocomplete>
+				</div>
+				<div class="age clearfix">
+					<label for="age">年龄</label>
+					<input type="number" name="uage" value="" id="age" placeholder="请输入年龄">
+				</div>
+				<div class="birthday clearfix">
+					<label for="birthday">出生日期</label>
+					<input type="date" name="ubirthday" value="" id="birthday">
+				</div>
+				<input type="submit" name="" value="注册" id="submit">
+			</form>
+		</div>
+	</main>
+	<footer id="footer">
+		<div class="link">
+			<a href="javascript:;" rel="nofollow">关于我们</a>|
+			<a href="javascript:;" rel="nofollow">关于我们</a>|
+			<a href="javascript:;" rel="nofollow">关于我们</a>|
+			<a href="javascript:;" rel="nofollow">关于我们</a>|
+			<a href="javascript:;" rel="nofollow">关于我们</a>|
+			<a href="javascript:;" rel="nofollow">关于我们</a>|
+			<a href="javascript:;" rel="nofollow">关于我们</a>|
+			<a href="javascript:;" rel="nofollow">关于我们</a>
+		</div>
+		<div class="copyright">Copyright&nbsp;&nbsp;©&nbsp;&nbsp; 2004-2016&nbsp;&nbsp;  京东JD.com&nbsp;&nbsp; 版权所有</div>
+	</footer>
+
+	<script>
+		var inp = document.getElementById('inpBox').getElementsByTagName('input');
+
+		for(var i = 0; i < inp.length-1; i++){
+			inp[i].onfocus = function(event){
+				var ele = event.target;
+				focusfun(ele);
+			}
+
+			inp[i].onblur = function(event){
+				var ele = event.target;
+				blurfun(ele);
+			}
+		}
+		
+
+		function node(ele){
+			var parent = ele.parentNode;
+			var node = parent.getElementsByTagName('label');
+			if(node.length > 1){
+				return node;
+			}else{
+				return 0;
+			}
+		}
+
+		function focusfun(ele){
+			var obj = node(ele);
+			if(!obj) return false;
+			obj[1].style.display = "block";
+		}
+
+		function blurfun(ele){
+			var obj = node(ele);
+			if(!obj) return false;
+			var str = obj[0].innerHTML;
+			if(ele.validity.valid){
+				obj[1].innerHTML = str + '输入正确';
+				obj[1].style.background = '#5cb85c';
+			}else{
+				 if(ele.validity.valueMissing){
+					obj[1].innerHTML = '请输入' + str;
+					obj[1].style.background = '#d9534f';
+				}else if(ele.validity.patternMismatch){
+					obj[1].innerHTML = str + '输入格式不正确';
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>

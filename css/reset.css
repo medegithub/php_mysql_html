@@ -1,0 +1,21 @@
+html,body,div,p,h1,h2,h3,h4,h5,a,img,span,i,em,b,strong,var,article,aside, details, figcaption, figure, footer, header, hgroup,
+ main, menu, nav, section, summary,table,td,tr,th,thead,tbody,ul,ol,li{margin: 0; padding: 0;}
+ article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {display: block;}
+body{font-size: 14px; font-family: 'Microsoft YaHei'}
+a{text-decoration: none}
+li{list-style: none outside}
+img{border: 0}
+:focus{outline: 0}
+.clearfix:after{content:""; height: 0; clear:both; font-size: 0; display: block; visibility: hidden; }

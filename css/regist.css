@@ -1,0 +1,19 @@
+#header .logo{width: 990px; margin: 0 auto; padding: 30px 0 15px; overflow: hidden;}
+#header .logo img{ float: left; margin-right: 15px; height: 60px; width: 170px;}
+#header .logo span{float: left; height: 34px; margin-top: 13px; border-left: 1px solid #ddd; font-size: 18px; 
+	line-height: 34px; padding-left: 20px; letter-spacing: 15px;}
+#footer{text-align:center; padding:20px 0;color:#666;}
+#footer .link a{color:#666; padding-right: 5px;}
+#footer .copyright{ padding-top: 10px;}
+
+#main video{width: 100%; height: auto; object-fit: contain;}
+#main .form-box{position: absolute; width: 100%; height: auto; z-index: 99; top:50%; left:0; overflow: hidden;transform: translate(0, -50%)}
+.form-box form{width: 660px; margin: 0 auto; background: rgba(255,255,255,0.7); border: 1px solid #555; border-radius: 10px;padding: 20px;}
+.form-box form div{margin-bottom: 20px; overflow: hidden;}
+.form-box form div label{float: left; width: 70px; text-align: right; padding-right: 20px; line-height: 30px;}
+.form-box form div label[id]{width: 230px; background: #999; color: #fff; border-radius: 5px; margin-left: 10px; text-align:left;
+	 padding-left: 10px; display: none;}
+.form-box form div input{float: left; width:271px; height: 30px; border-radius: 5px; padding-left: 10px; font-family: 'Microsoft YaHei';
+	outline: 0; border: 1px solid #ddd; background: #fff;}
+#submit{display: block; margin-left: 90px; width: 245px; background:#5cb85c; color: #fff; text-align: center; border-radius: 5px; 
+	height: 35px; line-height: 35px; font-size: 14px;font-family: 'Microsoft YaHei'; border: 0; outline: 0}
