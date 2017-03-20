@@ -7,14 +7,12 @@ USE userinfo;
 
 CREATE TABLE user_msg(
 	uid INT PRIMARY KEY AUTO_INCREMENT,
-	uname VARCHAR(32),
-	upsw VARCHAR(1),
-	uweb VARCHAR(4),
-	uage INT,
-	ubirthday VARCHAR(50)
+	uname VARCHAR(20),
+	upsw VARCHAR(20),
+	uweb VARCHAR(300),
+	uage VARCHAR(10),
+	ubirthday VARCHAR(32)
 );
-
-INSERT INTO user_msg VALUES ('1','qiangdong','123456896','hjk','89','76');
 
 CREATE TABLE goods(
 	gid INT PRIMARY KEY AUTO_INCREMENT,

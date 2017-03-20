@@ -23,16 +23,16 @@
 			浏览器不支持video标签，请使用新版本浏览器！
 		</video>
 		<div class="form-box" id="inpBox">
-			<form action="practice.php" method="post">
+			<form action="practice.php" method="post" name="registform" onsubmit="return checkfun()">
 				<div class="uesrname clearfix">
 					<label for="uesrname">用户名</label>
-					<input type="text" name="uname" value="" placeholder="请输入用户名" required autocomplete autofocus pattern="^[0-9]*$">
-					<label id="usernameTip">请输入8到16位的英文字母或数字</label>
+					<input type="text" name="uname" value="" required placeholder="请输入用户名" required autocomplete pattern="^[0-9a-zA-Z]{4,16}$">
+					<label id="usernameTip">请输入4到16位的英文字母或数字</label>
 				</div>
 				<div class="password clearfix">
 					<label for="password">密码</label>
-					<input type="text" name="upsw" value="" placeholder="请输入密码" required pattern="^[0-9]*$">
-					<label id="passwordTip">请输入8到12位的数字</label>
+					<input type="text" name="upsw" value="" placeholder="请输入密码" required pattern="^[0-9]{6,12}$">
+					<label id="passwordTip">请输入6到12位的数字</label>
 				</div>
 				<div class="website clearfix">
 					<label for="website">个人主页</label>
@@ -50,6 +50,10 @@
 			</form>
 		</div>
 	</main>
+	<div id="noticeMask">
+		<div id="maskbox"></div>
+		<div id="noticebox"></div>
+	</div>
 	<footer id="footer">
 		<div class="link">
 			<a href="javascript:;" rel="nofollow">关于我们</a>|
@@ -65,6 +69,33 @@
 	</footer>
 
 	<script>
+		window.onload = function(){
+			var oNotice = document.getElementById('noticeMask');
+			var obox = document.getElementById('noticebox');
+			var omask = document.getElementById('maskbox');
+			if(typeof (Storage) != undefined && localStorage.getItem('result')){
+				console.log(localStorage.getItem('result'));
+				oNotice.style.display = 'block';
+				if(localStorage.getItem('result').indexOf('registed') > -1){
+					obox.style.color = "red";
+					obox.innerHTML = '该账号应经注册过！';
+				}else if(localStorage.getItem('result').indexOf('fail') > -1){
+					obox.style.color = "red";
+					obox.innerHTML = '注册失败！请重新注册！';
+				}else{
+					obox.style.color = "green";
+					obox.innerHTML = '注册成功！请登录';
+				}
+
+				omask.onclick = function(){
+					oNotice.style.display = 'none';
+					localStorage.clear();
+				}
+			}else{
+				alert('该浏览器版本太低！');
+			}
+		}
+
 		var inp = document.getElementById('inpBox').getElementsByTagName('input');
 
 		for(var i = 0; i < inp.length-1; i++){
@@ -112,7 +143,6 @@
 				}
 			}
 		}
-
 	</script>
 </body>
 </html>
