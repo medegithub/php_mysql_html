@@ -1,5 +1,5 @@
 html,body,div,p,h1,h2,h3,h4,h5,a,img,span,i,em,b,strong,var,article,aside, details, figcaption, figure, footer, header, hgroup,
- main, menu, nav, section, summary,table,td,tr,th,thead,tbody,ul,ol,li{margin: 0; padding: 0;}
+ main, menu, nav, section, summary,table,td,tr,th,thead,tbody,ul,ol,li,label,input{margin: 0; padding: 0;}
  article,
 aside,
 details,

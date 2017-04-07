@@ -4,26 +4,27 @@
 	<meta charset="UTF-8">
 	<title>登录</title>
 	<link rel="icon" href="img/favicon.ico">
+	<!-- [if lte IE 9]>
+	<script scr="js/html5shiv.min.js"></script>
+	<script src="js/respond.js"></script>
+	<!end if-->
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/regist.css">
-	<!-- [if lt IE 9]>
-		<script scr="js/html5shiv.min.js"></script>
-		<script src="js/respond.js"></script>
-	<![endif]-->
 </head>
+
 <body>
-	<header id="header">
-		<div class="logo clearfix">
+	<div id="header">
+		<div class="logo wid1200 clearfix">
 			<img src="img/logo.png" alt="京东"><span>欢迎注册</span>
 		</div>
-	</header><!-- /header -->
-	<main id="main">
+	</div><!-- /header -->
+	<div id="main">
 		<video autoplay loop>
 			<source src="video/bg.mp4">
 			浏览器不支持video标签，请使用新版本浏览器！
 		</video>
 		<div class="form-box" id="inpBox">
-			<form action="practice.php" method="post" name="registform" onsubmit="return checkfun()">
+			<form action="practice.php" method="post" name="registform" onsubmit="return checkfun();">
 				<div class="uesrname clearfix">
 					<label for="uesrname">用户名</label>
 					<input type="text" name="uname" value="" required placeholder="请输入用户名" required autocomplete pattern="^[0-9a-zA-Z]{4,16}$">
@@ -46,15 +47,15 @@
 					<label for="birthday">出生日期</label>
 					<input type="date" name="ubirthday" value="" id="birthday">
 				</div>
-				<input type="submit" name="" value="注册" id="submit">
+				<input type="submit" name="" value="注册" id="subtn">
 			</form>
 		</div>
-	</main>
+	</div>
 	<div id="noticeMask">
 		<div id="maskbox"></div>
 		<div id="noticebox"></div>
 	</div>
-	<footer id="footer">
+	<div id="footer">
 		<div class="link">
 			<a href="javascript:;" rel="nofollow">关于我们</a>|
 			<a href="javascript:;" rel="nofollow">关于我们</a>|
@@ -66,83 +67,8 @@
 			<a href="javascript:;" rel="nofollow">关于我们</a>
 		</div>
 		<div class="copyright">Copyright&nbsp;&nbsp;©&nbsp;&nbsp; 2004-2016&nbsp;&nbsp;  京东JD.com&nbsp;&nbsp; 版权所有</div>
-	</footer>
+	</div>
 
-	<script>
-		window.onload = function(){
-			var oNotice = document.getElementById('noticeMask');
-			var obox = document.getElementById('noticebox');
-			var omask = document.getElementById('maskbox');
-			if(typeof (Storage) != undefined && localStorage.getItem('result')){
-				console.log(localStorage.getItem('result'));
-				oNotice.style.display = 'block';
-				if(localStorage.getItem('result').indexOf('registed') > -1){
-					obox.style.color = "red";
-					obox.innerHTML = '该账号应经注册过！';
-				}else if(localStorage.getItem('result').indexOf('fail') > -1){
-					obox.style.color = "red";
-					obox.innerHTML = '注册失败！请重新注册！';
-				}else{
-					obox.style.color = "green";
-					obox.innerHTML = '注册成功！请登录';
-				}
-
-				omask.onclick = function(){
-					oNotice.style.display = 'none';
-					localStorage.clear();
-				}
-			}else{
-				alert('该浏览器版本太低！');
-			}
-		}
-
-		var inp = document.getElementById('inpBox').getElementsByTagName('input');
-
-		for(var i = 0; i < inp.length-1; i++){
-			inp[i].onfocus = function(event){
-				var ele = event.target;
-				focusfun(ele);
-			}
-
-			inp[i].onblur = function(event){
-				var ele = event.target;
-				blurfun(ele);
-			}
-		}
-		
-
-		function node(ele){
-			var parent = ele.parentNode;
-			var node = parent.getElementsByTagName('label');
-			if(node.length > 1){
-				return node;
-			}else{
-				return 0;
-			}
-		}
-
-		function focusfun(ele){
-			var obj = node(ele);
-			if(!obj) return false;
-			obj[1].style.display = "block";
-		}
-
-		function blurfun(ele){
-			var obj = node(ele);
-			if(!obj) return false;
-			var str = obj[0].innerHTML;
-			if(ele.validity.valid){
-				obj[1].innerHTML = str + '输入正确';
-				obj[1].style.background = '#5cb85c';
-			}else{
-				 if(ele.validity.valueMissing){
-					obj[1].innerHTML = '请输入' + str;
-					obj[1].style.background = '#d9534f';
-				}else if(ele.validity.patternMismatch){
-					obj[1].innerHTML = str + '输入格式不正确';
-				}
-			}
-		}
-	</script>
+	<script src="js/regist.js"></script>
 </body>
 </html>

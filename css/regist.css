@@ -1,19 +1,164 @@
-#header .logo{width: 990px; margin: 0 auto; padding: 30px 0 15px; overflow: hidden;}
-#header .logo img{ float: left; margin-right: 15px; height: 60px; width: 170px;}
-#header .logo span{float: left; height: 34px; margin-top: 13px; border-left: 1px solid #ddd; font-size: 18px; 
-	line-height: 34px; padding-left: 20px; letter-spacing: 15px;}
-#footer{text-align:center; padding:20px 0;color:#666;}
-#footer .link a{color:#666; padding-right: 5px;}
-#footer .copyright{ padding-top: 10px;}
+/* line 1, ../sass/_default.scss */
+body {
+  font-family: 'Microsoft YaHei';
+}
 
-#main video{width: 100%; height: auto; object-fit: contain;}
-#main .form-box{position: absolute; width: 100%; height: auto; z-index: 99; top:50%; left:0; overflow: hidden;transform: translate(0, -50%)}
-.form-box form{width: 660px; margin: 0 auto; background: rgba(255,255,255,0.7); border: 1px solid #555; border-radius: 10px;padding: 20px;}
-.form-box form div{margin-bottom: 20px; overflow: hidden;}
-.form-box form div label{float: left; width: 70px; text-align: right; padding-right: 20px; line-height: 30px;}
-.form-box form div label[id]{width: 230px; background: #999; color: #fff; border-radius: 5px; margin-left: 10px; text-align:left;
-	 padding-left: 10px; display: none;}
-.form-box form div input{float: left; width:271px; height: 30px; border-radius: 5px; padding-left: 10px; font-family: 'Microsoft YaHei';
-	outline: 0; border: 1px solid #ddd; background: #fff;}
-#submit{display: block; margin-left: 90px; width: 245px; background:#5cb85c; color: #fff; text-align: center; border-radius: 5px; 
-	height: 35px; line-height: 35px; font-size: 14px;font-family: 'Microsoft YaHei'; border: 0; outline: 0}
+/* line 2, ../sass/_default.scss */
+.wid1200 {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* line 4, ../sass/regist.scss */
+#header {
+  box-shadow: 0 5px 10px #999;
+}
+/* line 6, ../sass/regist.scss */
+#header .logo {
+  overflow: hidden;
+  padding: 30px 0;
+}
+/* line 9, ../sass/regist.scss */
+#header .logo img {
+  float: left;
+  margin-right: 20px;
+}
+/* line 13, ../sass/regist.scss */
+#header .logo span {
+  float: left;
+  height: 34px;
+  border-left: 1px solid #999;
+  padding-left: 20px;
+  font-size: 20px;
+  line-height: 34px;
+  margin-top: 24px;
+  letter-spacing: 10px;
+}
+
+/* line 26, ../sass/regist.scss */
+.main {
+  display: block;
+}
+
+/* line 28, ../sass/regist.scss */
+#inpBox {
+  width: 670px;
+  position: absolute;
+  height: 370px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  top: 50%;
+  left: 50%;
+  margin-left: -335px;
+  margin-top: -185px;
+}
+/* line 39, ../sass/regist.scss */
+#inpBox form {
+  padding: 20px;
+  padding-top: 30px;
+}
+/* line 42, ../sass/regist.scss */
+#inpBox form div {
+  overflow: hidden;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+/* line 46, ../sass/regist.scss */
+#inpBox form div label {
+  float: left;
+  line-height: 34px;
+  color: #fff;
+}
+/* line 50, ../sass/regist.scss */
+#inpBox form div label[for] {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+  color: #666;
+  font-weight: bold;
+}
+/* line 57, ../sass/regist.scss */
+#inpBox form div label[id] {
+  display: none;
+  width: 210px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+}
+/* line 67, ../sass/regist.scss */
+#inpBox form div input {
+  float: left;
+  width: 254px;
+  height: 24px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: 'Microsoft YaHei';
+  line-height: 24px;
+  margin-right: 10px;
+}
+/* line 79, ../sass/regist.scss */
+#inpBox form #subtn {
+  display: block;
+  width: 219px;
+  height: 32px;
+  line-height: 32px;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Microsoft YaHei';
+  text-align: center;
+  margin-left: 80px;
+  background: #5cb85c;
+  border: none;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+/* line 97, ../sass/regist.scss */
+#noticeMask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+}
+/* line 104, ../sass/regist.scss */
+#noticeMask #maskbox {
+  height: 100%;
+  background: #000;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+/* line 110, ../sass/regist.scss */
+#noticeMask #noticebox {
+  position: absolute;
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+  line-height: 100px;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -150px;
+}
+
+/* line 125, ../sass/regist.scss */
+#footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  line-height: 20px;
+}
+/* line 131, ../sass/regist.scss */
+#footer a {
+  color: #666;
+  margin-right: 5px;
+  margin-left: 2px;
+}
